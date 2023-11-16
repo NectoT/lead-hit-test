@@ -49,10 +49,13 @@ class FormTemplate(BaseModel):
 
     @staticmethod
     def is_date(field: str) -> bool:
-        separated_field = re.split(r'[.-]', field)
+        separated_field = field.split('.')
 
         if len(separated_field) != 3:
-            return False
+            separated_field = field.split('-')
+            if len(separated_field) != 3:
+                return False
+
         if len(separated_field[0]) != 2 or len(separated_field[1]) != 2:
             return False
         

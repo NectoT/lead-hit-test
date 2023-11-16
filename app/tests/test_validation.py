@@ -10,8 +10,9 @@ class TestFormTemplateValidation(unittest.TestCase):
         self.assertFalse(FormTemplate.is_date('no-12-2020'))
         self.assertFalse(FormTemplate.is_date('1-12-2020'))
         self.assertFalse(FormTemplate.is_date('61-12-2020'))
-        self.assertFalse(FormTemplate.is_date('61/12/2020'))
+        self.assertFalse(FormTemplate.is_date('03/12/2020'))
         self.assertFalse(FormTemplate.is_date('12.2020'))
+        self.assertFalse(FormTemplate.is_date('12.03-2002'))
     
     def test_email(self):
         self.assertTrue(FormTemplate.is_email('cool@stuff.io'))
