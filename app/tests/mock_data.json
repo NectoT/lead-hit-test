@@ -1,0 +1,22 @@
+[
+    {
+        "name": "musicSubscriptionForm",
+        "email": "email",
+        "subscriptionType": "text"
+    },
+    {
+        "name": "veterinarianAppointmentForm",
+        "date": "date",
+        "phone": "phone",
+        "petName": "text",
+        "ownerName": "text"
+    },
+    {
+        "name": "concertForm",
+        "email": "email"
+    },
+    {
+        "name": "loveLetterForm",
+        "letter": "text"
+    }
+]

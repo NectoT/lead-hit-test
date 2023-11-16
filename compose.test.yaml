@@ -1,0 +1,23 @@
+services:
+  mongodb:
+    image: mongo
+    ports:
+      - 127.0.0.1:8002:27017
+    volumes: 
+      - '/mongodb'
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: test
+    ports: 
+      - 8000:8000
+    depends_on: 
+      - mongodb
+    environment:
+      DB_HOST: mongodb
+      DB_PORT: 27017
+      DB_NAME: TestDb
+      FORM_TEMPLATES_COLLECTION_NAME: FormTemplate
+  
